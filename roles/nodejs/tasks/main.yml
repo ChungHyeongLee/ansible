@@ -2,9 +2,11 @@
 # tasks file for nodejs
 - name: Installing node and npm
   yum:
-        name: "{{ item }}"
-        enablerepo: epel 
-        state: installed
+      name: "{{ item }}"
+      enablerepo: epel 
+      state: installed
+  vars:
+      ansible_python_interpreter: /usr/bin/python
   with_items:
-        - nodejs
-        - npm
+      - nodejs
+      - npm
