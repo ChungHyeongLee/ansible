@@ -32,7 +32,8 @@
     name: jenkins
     enablerepo: jenkins
     state: present
-
+  vars:
+    ansible_python_interpreter: /usr/bin/python
 - name: Start Jenkins
   service:
     name: jenkins
