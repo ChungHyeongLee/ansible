@@ -21,9 +21,10 @@
   shell: wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
 
 - name: Import Jenkins GPG key
+  shell: wget -O /etc/yum.repos.d/jenkins.io.key https://pkg.jenkins.io/redhat/jenkins.io.key
   rpm_key:
     state: present
-    key: http://pkg.jenkins.io/redhat/jenkins.io.key
+    key: /etc/yum.repos.d/jenkins.io.key
 
 - name: Install Jenkins
   yum:
