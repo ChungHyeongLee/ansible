@@ -1,7 +1,6 @@
 ---
 # tasks file for jenkins
 
-
 - name: Removing old version of JAVA from Amazon Linux
   yum:
     name: java-1.7.0-openjdk
@@ -39,3 +38,5 @@
     name: jenkins
     enabled: yes
     state: started
+  vars:
+    ansible_python_interpreter: /usr/bin/python
